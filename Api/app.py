@@ -3,13 +3,15 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 
 from fastai.vision.all import *
 from fastai.data.external import *
+import random
+import shutil
 
 app = FastAPI()
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 # Load the FastAI learner model from the exported file
-learner = load_learner('Api/export.pkl')
+learner = load_learner('Own_model/second_model.pkl')
 
 
 def is_allowed_file(filename):
